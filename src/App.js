@@ -3,15 +3,21 @@ import { useState } from 'react'
 
 function App() {
   const [ buttonColor, setButtonColor ] = useState('red');
-  const [ isDisabled, setIsDisabled ] = useState(false)
+  const [ isDisabled, setIsDisabled ] = useState(false);
   const newButtonColor = buttonColor === 'red' ? 'blue' : 'red';
+ 
+  
   function handleCheckbox (){
-    !isDisabled ? setIsDisabled(true) : setIsDisabled(false)
+    if(!isDisabled){
+      setIsDisabled(true);
+    } else {
+      setIsDisabled(false);      
+    }
   }
   return (
     <div>
       <button 
-        style={{backgroundColor: buttonColor}}
+        style={{backgroundColor: isDisabled ? 'gray' : buttonColor}}
         onClick={() => setButtonColor(newButtonColor) }
         disabled={isDisabled}
       >
