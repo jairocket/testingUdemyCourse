@@ -20,10 +20,11 @@ function App() {
       <input 
         type="checkbox" 
         onClick={handleCheckbox}
-        id="enable-button-checkbox"
+        id="disable-button-checkbox"
         defaultChecked={isDisabled}
         aria-checked={isDisabled}
       />
+      <label htmlFor='disable-button-checkbox'>Disable button</label>
     </div>
   );
 }
